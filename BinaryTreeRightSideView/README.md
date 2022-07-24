@@ -13,4 +13,6 @@ Input: root = [1,null,3]
 Output: [1,3]
 
 // Compilation and test
-![image](https://user-images.githubusercontent.com/109823002/180659903-623423d0-e319-40fa-925e-72b7fd28b612.png)
+
+![image](https://user-images.githubusercontent.com/109823002/180659949-bcd478c2-6cdb-4e9a-80e2-6e6ea79b4ff3.png)
+
