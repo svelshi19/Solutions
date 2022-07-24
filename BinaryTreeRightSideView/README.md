@@ -11,3 +11,6 @@ Example 2:
 Example 2:
 Input: root = [1,null,3]
 Output: [1,3]
+
+// Compilation and test
+![image](https://user-images.githubusercontent.com/109823002/180659903-623423d0-e319-40fa-925e-72b7fd28b612.png)
