@@ -103,14 +103,16 @@ void TicTacToe::updateBoard() {
  */
 bool TicTacToe::winPossible(char turnToExamine, int turnsRemaining) {
     // checking the win for Simple Rows and Simple Column
+
     for (int row = 0; row < board.size(); row++) {
         bool calculateRow = true;
         bool calculateCol = true;
-        int remaining = turnsRemaining;
+        int remainingRow = turnsRemaining;
+        int remainingCol = turnsRemaining;
         for (int col = 0; col < board.size(); col++) {
             // Check for row
             if (board[row][col] != '*' && board[row][col] != 'o' &&
-                remaining != 0) {
+                remainingRow-- != 0) {
                 calculateRow = calculateRow && true;
             } else {
                 calculateRow =
@@ -119,14 +121,12 @@ bool TicTacToe::winPossible(char turnToExamine, int turnsRemaining) {
 
             // Check for column
             if (board[col][row] != '*' && board[col][row] != 'o' &&
-                remaining != 0) {
+                remainingCol-- != 0) {
                 calculateCol = calculateCol && true;
             } else {
                 calculateCol =
-                    calculateCol && (board[row][col] == turnToExamine);
+                    calculateCol && (board[col][row] == turnToExamine);
             }
-
-            remaining--;
         }
         if (calculateRow || calculateCol) {
             return true;
@@ -186,7 +186,7 @@ bool TicTacToe::predictDraw() {
                 numberNut++;
             }
         }
-        return (!winPossible('*', numberCross) || !winPossible('o', numberNut));
+        return !(winPossible('*', numberCross) || winPossible('o', numberNut));
     } else {
         return false;
     }
